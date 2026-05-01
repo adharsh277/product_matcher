@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Product Matcher</h1>
+    
+    <div id="loading" class="loading hidden">
+      <p>Loading...</p>
+    </div>
+
+    <div id="productInfo" class="hidden">
+      <h3>Current Product</h3>
+      <p><strong>Title:</strong> <span id="currentTitle"></span></p>
+      <p><strong>Price:</strong> ₹<span id="currentPrice"></span></p>
+    </div>
+
+    <button id="compareBtn" class="btn-primary">Compare Price</button>
+
+    <div id="result" class="result hidden">
+      <h3>Similar Products Found</h3>
+      <div id="productsList"></div>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
