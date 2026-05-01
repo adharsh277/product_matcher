@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Product Matcher",
+  "version": "1.0.0",
+  "description": "Compare product prices across Amazon and Flipkart instantly",
+  "permissions": ["activeTab", "scripting", "webRequest"],
+  "host_permissions": [
+    "*://*.amazon.in/*",
+    "*://*.flipkart.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Smart Product Matcher"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.amazon.in/*", "*://*.flipkart.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
