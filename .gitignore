@@ -1,0 +1,21 @@
+# Dependencies and build artifacts
+node_modules/
+package-lock.json
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Chrome Extension
+.chrome/
