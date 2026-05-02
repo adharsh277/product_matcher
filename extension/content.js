@@ -1,31 +1,27 @@
 // Content script - runs on product pages to extract data
 
 function getProductData() {
-  let title = "";
-  let price = "";
+  let title =
+    document.querySelector("#productTitle")?.innerText ||  // Amazon
+    document.querySelector("span.VU-ZEz")?.innerText ||    // Flipkart (new)
+    document.querySelector("span.B_NuCI")?.innerText ||    // Flipkart (old)
+    document.querySelector("h1")?.innerText ||             // Any h1
+    document.querySelector("[data-cy='title']")?.innerText; // Flipkart data attr
 
-  // Amazon selectors
-  if (document.querySelector("#productTitle")) {
-    title = document.querySelector("#productTitle")?.innerText || "";
-    price = document.querySelector(".a-price-whole")?.innerText || "";
-    price = price.replace(/[^\d.]/g, ""); // Remove currency symbols
-  }
-  // Flipkart selectors
-  else if (document.querySelector("span.B_NuCI")) {
-    title = document.querySelector("span.B_NuCI")?.innerText || "";
-    const priceElement = document.querySelector("div._30jeq3");
-    if (priceElement) {
-      price = priceElement.innerText;
-      price = price.replace(/[^\d.]/g, "");
-    }
+  let price =
+    document.querySelector(".a-price-whole")?.innerText || // Amazon
+    document.querySelector("div.Nx9bqj")?.innerText ||     // Flipkart (new)
+    document.querySelector("div._30jeq3")?.innerText ||    // Flipkart (old)
+    document.querySelector("[data-cy='price-tag']")?.innerText; // Flipkart data attr
+
+  console.log("✅ Extracted:", { title, price });
+
+  if (!title) {
+    console.error("❌ Title not found");
+    return null;
   }
 
-  return {
-    title: title.trim(),
-    price: parseFloat(price) || 0,
-    url: window.location.href,
-    source: window.location.hostname.includes("amazon") ? "Amazon" : "Flipkart"
-  };
+  return { title, price };
 }
 
 // Listen for messages from popup
