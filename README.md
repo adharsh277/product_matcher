@@ -4,6 +4,7 @@ A powerful Chrome extension that extracts product information from Amazon and Fl
 
 ## 🎯 Features
 
+
 ✅ **Product Data Extraction** - Automatically extracts product title, price, and URL from Amazon & Flipkart
 ✅ **Smart Matching** - Uses keyword similarity scoring to find related products
 ✅ **Simple UI** - Clean popup interface with ranked results
