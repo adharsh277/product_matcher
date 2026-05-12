@@ -11,7 +11,6 @@ A powerful Chrome extension that extracts product information from Amazon and Fl
 ✅ **No Dependencies** - Runs completely locally without external APIs (MVP version)
 
 ## 📁 Project Structure
-
 ``
 product_matcher/
 ├── extension/                 # Chrome Extension files
