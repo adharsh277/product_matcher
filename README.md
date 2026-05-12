@@ -13,7 +13,6 @@ A powerful Chrome extension that extracts product information from Amazon and Fl
 ## 📁 Project Structure
 
 
-
 ```
 product_matcher/
 ├── extension/                 # Chrome Extension files
